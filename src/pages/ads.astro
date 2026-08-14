@@ -1,6 +1,8 @@
 ---
 import AdSlot from "@components/widget/AdSlot.astro";
 import MediaNetSlot from "@components/widget/MediaNetSlot.astro";
+import RawAdSlot from "@components/widget/RawAdSlot.astro";
+import { adsterraConfig, infolinksConfig } from "@/config";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 ---
 <MainGridLayout title="广告" description="广告">
@@ -15,6 +17,16 @@ import MainGridLayout from "../layouts/MainGridLayout.astro";
                 Media.net
             </div>
             <MediaNetSlot />
+
+            <div class="text-black/75 dark:text-white/75 mt-4">
+                Adsterra
+            </div>
+            <RawAdSlot config={adsterraConfig} name="Adsterra" />
+
+            <div class="text-black/75 dark:text-white/75 mt-4">
+                Infolinks
+            </div>
+            <RawAdSlot config={infolinksConfig} name="Infolinks" />
         </div>
     </div>
 </MainGridLayout>

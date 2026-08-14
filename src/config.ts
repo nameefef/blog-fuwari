@@ -5,6 +5,7 @@ import type {
 	MediaNetConfig,
 	NavBarConfig,
 	ProfileConfig,
+	RawAdSlotConfig,
 	SiteConfig,
 } from "./types/config";
 import { LinkPreset } from "./types/config";
@@ -101,6 +102,16 @@ export const adsenseConfig: AdsenseConfig = {
 export const mediaNetConfig: MediaNetConfig = {
 	// Set to true and paste the ad unit code from the Media.net
 	// dashboard once the site has been approved.
+	enable: false,
+	code: "",
+};
+
+export const adsterraConfig: RawAdSlotConfig = {
+	enable: false,
+	code: "",
+};
+
+export const infolinksConfig: RawAdSlotConfig = {
 	enable: false,
 	code: "",
 };
