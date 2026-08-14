@@ -32,4 +32,10 @@
 
 ## 友链列表
 
-- [二叉树树](https://2x.nz/) — afoim
+<a href="https://2x.nz/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.5rem 0.9rem;border-radius:0.75rem;background:var(--card-bg);text-decoration:none;">
+  <img src="https://avatars.githubusercontent.com/u/180811437?v=4" alt="二叉树树" width="40" height="40" style="border-radius:9999px;margin:0;" />
+  <span>
+    <span style="display:block;font-weight:700;">二叉树树</span>
+    <span style="display:block;font-size:0.8rem;opacity:0.6;">afoim</span>
+  </span>
+</a>
