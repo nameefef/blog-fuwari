@@ -85,18 +85,6 @@ export type AdsenseConfig = {
 	slot: string;
 };
 
-export type MediaNetConfig = {
-	enable: boolean;
-	/** Raw ad unit HTML/script snippet from the Media.net dashboard, pasted as-is */
-	code: string;
-};
-
-export type RawAdSlotConfig = {
-	enable: boolean;
-	/** Raw ad unit HTML/script snippet, pasted as-is */
-	code: string;
-};
-
 export type LIGHT_DARK_MODE =
 	| typeof LIGHT_MODE
 	| typeof DARK_MODE

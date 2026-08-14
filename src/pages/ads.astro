@@ -1,8 +1,5 @@
 ---
 import AdSlot from "@components/widget/AdSlot.astro";
-import MediaNetSlot from "@components/widget/MediaNetSlot.astro";
-import RawAdSlot from "@components/widget/RawAdSlot.astro";
-import { adsterraConfig, infolinksConfig } from "@/config";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 ---
 <MainGridLayout title="广告" description="广告">
@@ -14,19 +11,24 @@ import MainGridLayout from "../layouts/MainGridLayout.astro";
             <AdSlot />
 
             <div class="text-black/75 dark:text-white/75 mt-4">
-                Media.net
+                自家服务推荐
             </div>
-            <MediaNetSlot />
-
-            <div class="text-black/75 dark:text-white/75 mt-4">
-                Adsterra
-            </div>
-            <RawAdSlot config={adsterraConfig} name="Adsterra" />
-
-            <div class="text-black/75 dark:text-white/75 mt-4">
-                Infolinks
-            </div>
-            <RawAdSlot config={infolinksConfig} name="Infolinks" />
+            <a
+                href="https://mail.easonyin.xyz/"
+                target="_blank"
+                rel="noopener"
+                class="card-base flex items-center gap-4 p-4 !bg-[var(--btn-regular-bg)] hover:!bg-[var(--btn-regular-bg-hover)] active:scale-95"
+            >
+                <div class="h-12 w-12 rounded-lg bg-[var(--primary)] flex items-center justify-center text-white text-xl font-bold shrink-0">
+                    @
+                </div>
+                <div>
+                    <div class="font-bold text-black/90 dark:text-white/90">EasonYin Mail</div>
+                    <div class="text-sm text-black/50 dark:text-white/50">
+                        自建邮箱服务，mail.easonyin.xyz — 点击访问
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 </MainGridLayout>
