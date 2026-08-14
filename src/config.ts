@@ -2,6 +2,7 @@ import type {
 	AdsenseConfig,
 	ExpressiveCodeConfig,
 	LicenseConfig,
+	MediaNetConfig,
 	NavBarConfig,
 	ProfileConfig,
 	SiteConfig,
@@ -95,6 +96,13 @@ export const adsenseConfig: AdsenseConfig = {
 	// Using Auto ads (site-wide <head> script), so no specific ad-unit
 	// slot ID is needed — Google places ads automatically.
 	slot: "",
+};
+
+export const mediaNetConfig: MediaNetConfig = {
+	// Set to true and paste the ad unit code from the Media.net
+	// dashboard once the site has been approved.
+	enable: false,
+	code: "",
 };
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {
