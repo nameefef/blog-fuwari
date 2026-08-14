@@ -1,0 +1,37 @@
+---
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+---
+<MainGridLayout title="工具" description="工具">
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full flex flex-col gap-4">
+
+            <div class="text-black/75 dark:text-white/75">
+                短链生成器
+            </div>
+            <a
+                href="https://s.easonyin.xyz/"
+                target="_blank"
+                rel="noopener"
+                class="card-base flex items-center gap-4 p-4 !bg-[var(--btn-regular-bg)] hover:!bg-[var(--btn-regular-bg-hover)] active:scale-95"
+            >
+                <div class="h-12 w-12 rounded-lg bg-[var(--primary)] flex items-center justify-center text-white text-xl shrink-0">
+                    🔗
+                </div>
+                <div>
+                    <div class="font-bold text-black/90 dark:text-white/90">长链变短链</div>
+                    <div class="text-sm text-black/50 dark:text-white/50">
+                        s.easonyin.xyz — 点击使用
+                    </div>
+                </div>
+            </a>
+
+            <div class="text-black/75 dark:text-white/75 mt-4">
+                访客 IP 信息
+            </div>
+            <a href="https://ippure.com" target="_blank" rel="noopener">
+                <img src="https://my.ippure.com/v1/card" alt="访客IP信息卡片" title="点击查看IP信息" />
+            </a>
+
+        </div>
+    </div>
+</MainGridLayout>
