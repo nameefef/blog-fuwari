@@ -1,0 +1,57 @@
+---
+interface Props {
+	class?: string;
+}
+const className = Astro.props.class;
+---
+<div id="giscus-container" class:list={["giscus", className]}></div>
+
+<script>
+	function loadGiscus() {
+		const container = document.getElementById("giscus-container");
+		if (!container || container.dataset.loaded === "true") return;
+		container.dataset.loaded = "true";
+
+		const isDark = document.documentElement.classList.contains("dark");
+
+		const script = document.createElement("script");
+		script.src = "https://giscus.app/client.js";
+		script.async = true;
+		script.crossOrigin = "anonymous";
+		script.setAttribute("data-repo", "nameefef/blog-fuwari");
+		script.setAttribute("data-repo-id", "R_kgDOT360CA");
+		script.setAttribute("data-category", "Announcements");
+		script.setAttribute("data-category-id", "DIC_kwDOT360CM4DDWSZ");
+		script.setAttribute("data-mapping", "pathname");
+		script.setAttribute("data-strict", "0");
+		script.setAttribute("data-reactions-enabled", "1");
+		script.setAttribute("data-emit-metadata", "0");
+		script.setAttribute("data-input-position", "top");
+		script.setAttribute("data-theme", isDark ? "dark" : "light");
+		script.setAttribute("data-lang", "zh-CN");
+		script.setAttribute("data-loading", "lazy");
+		container.appendChild(script);
+	}
+
+	function setGiscusTheme(theme: string) {
+		const iframe = document.querySelector<HTMLIFrameElement>(
+			"iframe.giscus-frame",
+		);
+		iframe?.contentWindow?.postMessage(
+			{ giscus: { setConfig: { theme } } },
+			"https://giscus.app",
+		);
+	}
+
+	loadGiscus();
+	document.addEventListener("astro:page-load", loadGiscus);
+
+	const observer = new MutationObserver(() => {
+		const isDark = document.documentElement.classList.contains("dark");
+		setGiscusTheme(isDark ? "dark" : "light");
+	});
+	observer.observe(document.documentElement, {
+		attributes: true,
+		attributeFilter: ["class"],
+	});
+</script>
