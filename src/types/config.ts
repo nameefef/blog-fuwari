@@ -77,6 +77,14 @@ export type LicenseConfig = {
 	url: string;
 };
 
+export type AdsenseConfig = {
+	enable: boolean;
+	/** AdSense publisher ID, e.g. "ca-pub-1234567890123456" */
+	client: string;
+	/** Ad unit slot ID */
+	slot: string;
+};
+
 export type LIGHT_DARK_MODE =
 	| typeof LIGHT_MODE
 	| typeof DARK_MODE

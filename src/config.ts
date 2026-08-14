@@ -1,4 +1,5 @@
 import type {
+	AdsenseConfig,
 	ExpressiveCodeConfig,
 	LicenseConfig,
 	NavBarConfig,
@@ -53,6 +54,10 @@ export const navBarConfig: NavBarConfig = {
 			url: "/sponsor",
 		},
 		{
+			name: "广告",
+			url: "/ads",
+		},
+		{
 			name: "GitHub",
 			url: "https://github.com/nameefef", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
@@ -82,6 +87,14 @@ export const licenseConfig: LicenseConfig = {
 	enable: true,
 	name: "CC BY-NC-SA 4.0",
 	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+};
+
+export const adsenseConfig: AdsenseConfig = {
+	// Set to true once you have a real AdSense publisher/slot ID below.
+	// Until then, a placeholder box is shown instead of real ads.
+	enable: false,
+	client: "",
+	slot: "",
 };
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {

@@ -1,0 +1,36 @@
+---
+import { adsenseConfig } from "@/config";
+
+interface Props {
+	class?: string;
+}
+const className = Astro.props.class;
+const ready = adsenseConfig.enable && adsenseConfig.client && adsenseConfig.slot;
+---
+<div class:list={["card-base p-3", className]}>
+    {ready ? (
+        <>
+            <script
+                is:inline
+                async
+                src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseConfig.client}`}
+                crossorigin="anonymous"
+            ></script>
+            <ins
+                class="adsbygoogle"
+                style="display:block"
+                data-ad-client={adsenseConfig.client}
+                data-ad-slot={adsenseConfig.slot}
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+            ></ins>
+            <script is:inline>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </>
+    ) : (
+        <div class="flex items-center justify-center h-24 rounded-lg border border-dashed border-black/15 dark:border-white/15 text-black/30 dark:text-white/30 text-sm">
+            广告位（未配置 AdSense）
+        </div>
+    )}
+</div>

@@ -1,0 +1,14 @@
+---
+import AdSlot from "@components/widget/AdSlot.astro";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+---
+<MainGridLayout title="广告" description="广告">
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full flex flex-col gap-4">
+            <div class="text-black/75 dark:text-white/75">
+                本页展示由 Google AdSense 提供的广告。
+            </div>
+            <AdSlot />
+        </div>
+    </div>
+</MainGridLayout>
