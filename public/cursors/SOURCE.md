@@ -1,0 +1,1 @@
+Cursor image extracted from https://github.com/Dr-hydra/BA-Pointer (`BA.Pointer/Assets/PCIcon_MousePoint.png`), which itself repackages assets from Blue Archive's `UI/FX_Touch`. That repo ships no LICENSE file, so terms are unclear beyond personal/non-commercial fan use — revisit if this site becomes commercial.
