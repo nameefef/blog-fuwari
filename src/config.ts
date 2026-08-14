@@ -70,6 +70,11 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa6-brands:github",
 			url: "https://github.com/nameefef",
 		},
+		{
+			name: "小红书",
+			icon: "xiaohongshu",
+			url: "https://www.xiaohongshu.com/user/profile/678e4269000000000e01ca17",
+		},
 	],
 };
 

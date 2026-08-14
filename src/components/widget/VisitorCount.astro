@@ -1,0 +1,16 @@
+---
+interface Props {
+	class?: string;
+}
+const className = Astro.props.class;
+---
+<div class:list={["card-base p-3 flex justify-center gap-4 text-sm text-neutral-400", className]}>
+    <span id="busuanzi_container_site_pv">
+        访问量 <span id="busuanzi_value_site_pv" class="font-bold text-[var(--primary)]">-</span>
+    </span>
+    <span id="busuanzi_container_site_uv">
+        访客数 <span id="busuanzi_value_site_uv" class="font-bold text-[var(--primary)]">-</span>
+    </span>
+</div>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
