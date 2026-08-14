@@ -90,10 +90,10 @@ export const licenseConfig: LicenseConfig = {
 };
 
 export const adsenseConfig: AdsenseConfig = {
-	// Set to true once you have a real AdSense publisher/slot ID below.
-	// Until then, a placeholder box is shown instead of real ads.
-	enable: false,
-	client: "",
+	enable: true,
+	client: "ca-pub-5089231470380426",
+	// Using Auto ads (site-wide <head> script), so no specific ad-unit
+	// slot ID is needed — Google places ads automatically.
 	slot: "",
 };
 
