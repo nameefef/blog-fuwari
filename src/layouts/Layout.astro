@@ -81,6 +81,10 @@ const bannerOffset =
 
 		<title>{pageTitle}</title>
 
+		{adsenseConfig.enable && adsenseConfig.client && (
+			<meta name="google-adsense-account" content={adsenseConfig.client} />
+		)}
+
 		<meta charset="UTF-8" />
 		<meta name="description" content={description || pageTitle}>
 		<meta name="author" content={profileConfig.name}>
