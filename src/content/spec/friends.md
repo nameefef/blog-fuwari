@@ -58,14 +58,6 @@
   </span>
 </a>
 
-<a href="https://imjipa.top" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.5rem 0.9rem;border-radius:0.75rem;background:var(--card-bg);text-decoration:none;">
-  <img src="https://imjipa.top/static/avatar.jpg" alt="JIPA233の小窝" width="40" height="40" style="border-radius:9999px;margin:0;" />
-  <span>
-    <span style="display:block;font-weight:700;">JIPA233の小窝</span>
-    <span style="display:block;font-size:0.8rem;opacity:0.6;">Deed divides beings into lower and higher ones.</span>
-  </span>
-</a>
-
 <a href="https://blog.srprolin.top" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.5rem 0.9rem;border-radius:0.75rem;background:var(--card-bg);text-decoration:none;">
   <img src="https://blog.srprolin.top/favicon/favicon.ico" alt="SrP-BloG" width="40" height="40" style="border-radius:9999px;margin:0;" />
   <span>
@@ -74,27 +66,11 @@
   </span>
 </a>
 
-<a href="https://bumiecloud.online" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.5rem 0.9rem;border-radius:0.75rem;background:var(--card-bg);text-decoration:none;">
-  <img src="https://bumiecloud.online/profile-picture.png" alt="晚风喵叙" width="40" height="40" style="border-radius:9999px;margin:0;" />
-  <span>
-    <span style="display:block;font-weight:700;">晚风喵叙</span>
-    <span style="display:block;font-size:0.8rem;opacity:0.6;">喵呜！欢迎喵！</span>
-  </span>
-</a>
-
 <a href="https://blog.fis.ink" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.5rem 0.9rem;border-radius:0.75rem;background:var(--card-bg);text-decoration:none;">
   <img src="https://www.fis.ink/img/logo.png" alt="fishcpy的小破站" width="40" height="40" style="border-radius:9999px;margin:0;" />
   <span>
     <span style="display:block;font-weight:700;">fishcpy的小破站</span>
     <span style="display:block;font-size:0.8rem;opacity:0.6;">非淡泊无以明志，非宁静无以致远</span>
-  </span>
-</a>
-
-<a href="https://201562.xyz" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.5rem 0.9rem;border-radius:0.75rem;background:var(--card-bg);text-decoration:none;">
-  <img src="https://201562.xyz/avatar.png" alt="SkyのXnok" width="40" height="40" style="border-radius:9999px;margin:0;" />
-  <span>
-    <span style="display:block;font-weight:700;">SkyのXnok</span>
-    <span style="display:block;font-size:0.8rem;opacity:0.6;">记录学习、生活与思考</span>
   </span>
 </a>
 
@@ -111,14 +87,6 @@
   <span>
     <span style="display:block;font-weight:700;">奇妙页</span>
     <span style="display:block;font-size:0.8rem;opacity:0.6;">探索AI创意与灵感的奇妙世界</span>
-  </span>
-</a>
-
-<a href="https://afipo.top" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.5rem 0.9rem;border-radius:0.75rem;background:var(--card-bg);text-decoration:none;">
-  <img src="https://afipo.top/logo.webp" alt="涵哲子居" width="40" height="40" style="border-radius:9999px;margin:0;" />
-  <span>
-    <span style="display:block;font-weight:700;">涵哲子居</span>
-    <span style="display:block;font-size:0.8rem;opacity:0.6;">天哲地理，共公卿好</span>
   </span>
 </a>
 
