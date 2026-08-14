@@ -61,7 +61,7 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "https://avatars.githubusercontent.com/u/132239472?v=4&size=64",
+	avatar: "https://avatars.githubusercontent.com/u/132239472?v=4&size=460",
 	name: "EasonYin",
 	bio: "YINSHILIN",
 	links: [
