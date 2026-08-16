@@ -32,6 +32,10 @@ enum I18nKey {
 	author = "author",
 	publishedAt = "publishedAt",
 	license = "license",
+
+	share = "share",
+	copyLink = "copyLink",
+	linkCopied = "linkCopied",
 }
 
 export default I18nKey;

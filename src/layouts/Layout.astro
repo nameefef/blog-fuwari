@@ -5,6 +5,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import ConfigCarrier from "@components/ConfigCarrier.astro";
+import MadeByClaude from "@components/control/MadeByClaude.astro";
 import { adsenseConfig, profileConfig, siteConfig } from "@/config";
 import {
 	AUTO_MODE,
@@ -165,6 +166,7 @@ const bannerOffset =
 		  data-overlayscrollbars-initialize
 	>
 		<ConfigCarrier></ConfigCarrier>
+		<MadeByClaude />
 		<slot />
 
 		<!-- increase the page height during page transition to prevent the scrolling animation from jumping -->

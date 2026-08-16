@@ -35,4 +35,8 @@ export const ko: Translation = {
 	[Key.author]: "저자",
 	[Key.publishedAt]: "게시일",
 	[Key.license]: "라이선스",
+
+	[Key.share]: "공유",
+	[Key.copyLink]: "링크 복사",
+	[Key.linkCopied]: "링크가 복사되었습니다",
 };

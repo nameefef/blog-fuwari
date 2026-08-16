@@ -5,6 +5,7 @@ import License from "@components/misc/License.astro";
 import Markdown from "@components/misc/Markdown.astro";
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
+import ShareButtons from "@components/control/ShareButtons.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { getSortedPosts } from "@utils/content-utils";
 import { getDir, getPostUrlBySlug } from "@utils/url-utils";
@@ -86,13 +87,16 @@ const jsonLd = {
 
             <!-- metadata -->
             <div class="onload-animation">
-                <PostMetadata
-                        class="mb-5"
-                        published={entry.data.published}
-                        updated={entry.data.updated}
-                        tags={entry.data.tags}
-                        category={entry.data.category}
-                ></PostMetadata>
+                <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-5">
+                    <PostMetadata
+                            class=""
+                            published={entry.data.published}
+                            updated={entry.data.updated}
+                            tags={entry.data.tags}
+                            category={entry.data.category}
+                    ></PostMetadata>
+                    <ShareButtons title={entry.data.title} url={Astro.url.href} />
+                </div>
                 {!entry.data.image && <div class="border-[var(--line-divider)] border-dashed border-b-[1px] mb-5"></div>}
             </div>
 

@@ -1,0 +1,134 @@
+---
+import { Icon } from "astro-icon/components";
+import I18nKey from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+
+interface Props {
+	title: string;
+	url: string;
+	class?: string;
+}
+
+const { title, url: shareUrl, class: className } = Astro.props;
+---
+
+<div class:list={["relative", className]}>
+    <button id="share-switch" type="button" aria-label={i18n(I18nKey.share)}
+            class="btn-plain scale-animation rounded-lg h-9 px-3 gap-2 flex items-center">
+        <Icon name="material-symbols:share-outline" class="text-[1.1rem]"></Icon>
+        <span class="text-sm font-medium">{i18n(I18nKey.share)}</span>
+    </button>
+
+    <div id="share-panel" class="float-panel float-panel-closed absolute z-50 top-11 right-0 p-2 flex flex-col gap-1 w-56">
+        <button type="button" data-share-copy
+                class="flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition w-full text-left">
+            <Icon name="material-symbols:link-rounded" class="text-[1.1rem] text-[var(--primary)]"></Icon>
+            <span data-share-copy-label
+                  data-copy-text={i18n(I18nKey.copyLink)}
+                  data-copied-text={i18n(I18nKey.linkCopied)}
+                  class="text-sm text-black/75 dark:text-white/75">
+                {i18n(I18nKey.copyLink)}
+            </span>
+        </button>
+
+        <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(title)}`}
+           target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition">
+            <Icon name="fa6-brands:x-twitter" class="text-[1.1rem] text-[var(--primary)]"></Icon>
+            <span class="text-sm text-black/75 dark:text-white/75">X (Twitter)</span>
+        </a>
+
+        <a href={`https://service.weibo.com/share/share.php?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(title)}`}
+           target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition">
+            <Icon name="fa6-brands:weibo" class="text-[1.1rem] text-[var(--primary)]"></Icon>
+            <span class="text-sm text-black/75 dark:text-white/75">微博</span>
+        </a>
+
+        <button type="button" data-share-native
+                class="flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition w-full text-left">
+            <Icon name="material-symbols:ios-share-rounded" class="text-[1.1rem] text-[var(--primary)]"></Icon>
+            <span class="text-sm text-black/75 dark:text-white/75">{i18n(I18nKey.more)}</span>
+        </button>
+    </div>
+</div>
+
+<script is:inline>
+(function () {
+	if (window.__shareButtonsInit) return;
+	window.__shareButtonsInit = true;
+
+	function fallbackCopy(text) {
+		var textarea = document.createElement("textarea");
+		textarea.value = text;
+		textarea.style.position = "fixed";
+		textarea.style.opacity = "0";
+		document.body.appendChild(textarea);
+		textarea.select();
+		try {
+			document.execCommand("copy");
+		} catch (err) {
+			// ignore, nothing more we can do without clipboard access
+		}
+		document.body.removeChild(textarea);
+	}
+
+	function copyCurrentUrl(labelEl) {
+		var url = window.location.href;
+		var finish = function () {
+			if (!labelEl) return;
+			var copiedText = labelEl.getAttribute("data-copied-text");
+			var originalText = labelEl.getAttribute("data-copy-text");
+			labelEl.textContent = copiedText;
+			setTimeout(function () {
+				labelEl.textContent = originalText;
+			}, 1500);
+		};
+		if (navigator.clipboard && navigator.clipboard.writeText) {
+			navigator.clipboard.writeText(url).then(finish).catch(function () {
+				fallbackCopy(url);
+				finish();
+			});
+		} else {
+			fallbackCopy(url);
+			finish();
+		}
+	}
+
+	document.addEventListener("click", function (e) {
+		var target = e.target;
+		if (!(target instanceof Element)) return;
+
+		var switchBtn = target.closest("#share-switch");
+		if (switchBtn) {
+			e.stopPropagation();
+			var panel = document.getElementById("share-panel");
+			if (panel) panel.classList.toggle("float-panel-closed");
+			return;
+		}
+
+		var copyBtn = target.closest("[data-share-copy]");
+		if (copyBtn) {
+			copyCurrentUrl(copyBtn.querySelector("[data-share-copy-label]"));
+			return;
+		}
+
+		var nativeBtn = target.closest("[data-share-native]");
+		if (nativeBtn) {
+			if (navigator.share) {
+				navigator.share({ title: document.title, url: window.location.href }).catch(function () {});
+			} else {
+				fallbackCopy(window.location.href);
+			}
+			return;
+		}
+
+		var openPanel = document.getElementById("share-panel");
+		if (openPanel && !openPanel.classList.contains("float-panel-closed")) {
+			if (!target.closest("#share-panel") && !target.closest("#share-switch")) {
+				openPanel.classList.add("float-panel-closed");
+			}
+		}
+	});
+})();
+</script>

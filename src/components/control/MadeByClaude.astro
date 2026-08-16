@@ -1,0 +1,32 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<!-- There can't be a filter on parent element, or it will break `fixed` -->
+<div class="made-by-claude-wrapper">
+    <a href="https://claude.com/claude-code" target="_blank" rel="noopener"
+       aria-label="Made with Claude Code"
+       class="made-by-claude-btn btn-card flex items-center gap-2 rounded-full px-3 h-9">
+        <Icon name="material-symbols:auto-awesome-rounded" class="text-[1rem] text-[var(--primary)]"></Icon>
+        <span class="hidden sm:inline text-xs font-medium text-black/70 dark:text-white/70 whitespace-nowrap">Made with Claude</span>
+    </a>
+</div>
+
+<style lang="stylus">
+.made-by-claude-wrapper
+    position: fixed
+    right: 1.25rem
+    bottom: 1.25rem
+    z-index: 45
+    pointer-events: none
+
+.made-by-claude-btn
+    pointer-events: auto
+    opacity: 0.85
+    transition: opacity 0.2s, transform 0.2s
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08)
+    &:hover
+        opacity: 1
+    &:active
+        transform: scale(0.95)
+</style>

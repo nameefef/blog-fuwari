@@ -35,4 +35,8 @@ export const th: Translation = {
 	[Key.author]: "ผู้เขียน",
 	[Key.publishedAt]: "เผยแพร่เมื่อ",
 	[Key.license]: "สัญญาอนุญาต",
+
+	[Key.share]: "แชร์",
+	[Key.copyLink]: "คัดลอกลิงก์",
+	[Key.linkCopied]: "คัดลอกลิงก์แล้ว",
 };
